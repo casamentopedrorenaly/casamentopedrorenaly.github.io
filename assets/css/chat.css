@@ -1,0 +1,330 @@
+* { 
+    margin: 0px; 
+    padding: 0px; 
+    outline: 0px; 
+    box-sizing: border-box;
+} 
+
+#root { 
+    margin: 0px auto;
+} 
+
+.div-geral { 
+    height: 85vh; 
+    min-height: 450px; 
+    width: 95vw; 
+    display: flex; 
+    flex-direction: column; 
+    border: 1px solid gray; 
+    position: absolute; 
+    border-radius: 5px; 
+    margin: auto; 
+    inset: 0px; 
+    overflow: hidden; 
+    z-index: 0;
+} 
+
+@media (min-width: 600px){ 
+  .div-geral { 
+    height: 80vh; 
+    min-height: 450px; 
+    width: 850px; 
+    min-width: 580px;
+  } 
+}     
+
+.div-geral #header-chat-top  { 
+    height: 30px; 
+    min-height: 30px; 
+    display: flex; 
+    overflow: auto; 
+    background-color: rgb(205, 240, 246); 
+    border-radius: 5px 5px 0px 0px; 
+    padding: 3px; 
+    -webkit-box-pack: end; 
+    justify-content: flex-end;
+} 
+
+.div-geral #chat-top  { 
+    height: 80px; 
+    padding-bottom: 4px; 
+    background-color: rgb(236, 246, 249);
+} 
+
+.div-geral #chat-conversation  { 
+    height: 100%; 
+    background-color: rgb(236, 246, 249); 
+    display: flex; 
+    max-height: 85.7%; 
+    position: relative; 
+    padding: 10px;
+} 
+
+.chat-top-interno { 
+    padding: 5px; 
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdwAAAA3CAIAAAApNWxXAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAGvGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTA3LTExVDEyOjE5OjIwLTAzOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wNy0xMVQyMTo1Nzo1Mi0wMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMC0wNy0xMVQyMTo1Nzo1Mi0wMzowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1ZTY2MjcwZS05MDc2LTAzNDEtODIzYi1kODFjYzc1ZWYyYTMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6YTY2NmYxZGQtZGVjNS1mZjRlLTg3YWYtZDEzODdmMjVlNmFjIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6YTY2NmYxZGQtZGVjNS1mZjRlLTg3YWYtZDEzODdmMjVlNmFjIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDphNjY2ZjFkZC1kZWM1LWZmNGUtODdhZi1kMTM4N2YyNWU2YWMiIHN0RXZ0OndoZW49IjIwMjAtMDctMTFUMTI6MTk6MjAtMDM6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YTllMDQ2MjUtMTI1OC04NjQyLWFkMzctNDBhMzQzYjNlODVmIiBzdEV2dDp3aGVuPSIyMDIwLTA3LTExVDE5OjQ4OjEyLTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjVlNjYyNzBlLTkwNzYtMDM0MS04MjNiLWQ4MWNjNzVlZjJhMyIgc3RFdnQ6d2hlbj0iMjAyMC0wNy0xMVQyMTo1Nzo1Mi0wMzowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqH50gsAAAejSURBVHja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"); 
+    background-repeat: no-repeat; 
+    background-size: 100% 100%; 
+    height: 100%; 
+    box-shadow: rgba(0, 0, 0, 0.467) 0px 1px 5px; 
+    background-repeat-x: no-repeat; 
+    background-repeat-y: no-repeat;
+} 
+
+.div-geral #chat-conversation #chat-conversation-left  { 
+    width: 78%; 
+    display: flex; 
+    flex-direction: column; 
+    padding: 5px;
+} 
+
+.div-geral #chat-conversation #chat-conversation-right  { 
+    padding-top: 10px;
+} 
+
+@media (min-width: 600px){ 
+  .div-geral #chat-conversation #chat-conversation-right  { 
+    width: 22%; 
+    max-width: 22%;
+  } 
+}     
+
+.chat-top-interno #div-username-subnick-chat  { 
+    height: 35px;
+} 
+
+.chat-top-interno #div-chat-menu-header  { 
+    display: flex; 
+    -webkit-box-pack: justify; 
+    justify-content: space-between; 
+    -webkit-box-align: center; 
+    align-items: center;
+} 
+
+.text-area-class { 
+    border-bottom: thin solid rgb(190, 214, 224); 
+    border-left: thin solid rgb(190, 214, 224); 
+    border-right: thin solid rgb(190, 214, 224); 
+    background-color: white; 
+    display: flex; 
+    flex-direction: column; 
+    font-size: 6px; 
+    color: gray; 
+    overflow: auto; 
+    height: 40%; 
+    padding: 5px; 
+    resize: none; 
+    margin-bottom: 10px;
+} 
+
+.enviar-class { 
+    display: flex; 
+    -webkit-box-pack: end; 
+    justify-content: flex-end; 
+    margin-bottom: 20px;
+} 
+
+.conversation-right { 
+    display: flex; 
+    flex-direction: column; 
+    -webkit-box-pack: justify; 
+    justify-content: space-between; 
+    padding-top: 5px; 
+    padding-bottom: 40px; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    height: 100%;
+} 
+
+.chat-top-interno #div-username-subnick-chat #div-username  { 
+    display: flex; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    height: 50%;
+} 
+
+.chat-top-interno #div-username-subnick-chat #div-subnick  { 
+    height: 50%;
+} 
+
+.chat-top-interno #div-username-subnick-chat #div-username #username  { 
+    font-size: 12px; 
+    margin-left: 10px;
+} 
+
+.chat-top-interno #div-username-subnick-chat #div-subnick #subnick-header  { 
+    font-size: 12px; 
+    padding-left: 27px; 
+    color: gray;
+} 
+
+.botao-desabilitado { 
+    background: transparent; 
+    padding: 5px; 
+    height: 100%; 
+    border-radius: 5px; 
+    border: 1px solid transparent; 
+    cursor: not-allowed;
+} 
+
+.botao-desabilitado:hover { 
+    border: 1px solid gray; 
+    box-shadow: rgb(255, 255, 255) 0px 0px 3px inset; 
+    background: rgba(255, 255, 255, 0.15);
+} 
+
+.avatar-chat #modal-border-avatar-div  { 
+    display: flex; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    -webkit-box-pack: center; 
+    justify-content: center; 
+    margin-left: 3px; 
+    margin-top: 2px; 
+    width: 98px; 
+    height: 98px;
+} 
+
+.conversation-right div #btn-edit-photo-shadow  { 
+    position: absolute; 
+    margin-top: -28px; 
+    margin-left: 72px; 
+    height: 21px; 
+    display: flex; 
+    -webkit-box-pack: center; 
+    justify-content: center; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    background: transparent; 
+    border: none;
+} 
+
+.conversation-right div #btn-edit-photo-shadow:hover  { 
+    cursor: pointer;
+} 
+
+.avatar-chat #modal-border-avatar-div #modal-border-avatar-frame  { 
+    position: absolute; 
+    margin-left: 5px; 
+    margin-top: 5px; 
+    width: 121px;
+} 
+
+.avatar-chat #modal-border-avatar-div #frame-div-avatar  { 
+    width: 100%; 
+    height: 100%;
+} 
+
+.conversation-right div #btn-edit-photo  { 
+    padding: 80px 30px 30px 80px; 
+    position: absolute; 
+    margin-top: -114px; 
+    margin-left: -10px; 
+    height: 21px; 
+    display: flex; 
+    -webkit-box-pack: center; 
+    justify-content: center; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    background: transparent; 
+    border: none;
+} 
+
+.conversation-right div #btn-edit-photo:hover  { 
+    cursor: pointer;
+} 
+
+.avatar-chat #modal-border-avatar-div #frame-div-avatar #modal-border-avatar-picture  { 
+    width: inherit; 
+    border-radius: 3px;
+} 
+
+#chat-conversation-right  { 
+    padding-top: 10px;
+} 
+
+@media (min-width: 600px){ 
+  #chat-conversation-right  { 
+    width: 22%; 
+    max-width: 22%;
+  } 
+}     
+
+#chat-conversation-left  { 
+    width: 78%; 
+    display: flex; 
+    flex-direction: column; 
+    padding: 5px;
+} 
+
+.div-messages { 
+    border: thin solid rgb(190, 214, 224); 
+    background-color: white; 
+    display: flex; 
+    flex-direction: column; 
+    font-size: 14px; 
+    color: gray; 
+    overflow: hidden scroll; 
+    height: 150%; 
+    padding: 5px; 
+    resize: vertical; 
+    cursor: default;
+} 
+
+.linha { 
+    display: flex; 
+    -webkit-box-pack: center; 
+    justify-content: center; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    margin-top: 5px;
+} 
+
+.linha-botoes-emoticons { 
+    margin-top: 5px; 
+    border: thin solid rgb(190, 214, 224); 
+    height: 30px; 
+    background: linear-gradient(rgb(248, 253, 255) 30%, rgb(234, 244, 247) 60%, rgb(248, 253, 255) 70%); 
+    display: flex; 
+    -webkit-box-align: center; 
+    align-items: center;
+} 
+
+.div-geral #header-chat-top .header-chat-top-buttons { 
+    background: white; 
+    padding: 0px 7px; 
+    border: 1px solid gray; 
+    margin-right: 10px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    display: flex; 
+    -webkit-box-align: center; 
+    align-items: center; 
+    -webkit-box-pack: center; 
+    justify-content: center;
+} 
+
+.linha-botoes-emoticons button  { 
+    margin-left: 5px;
+} 
+
+.text-area-class #text-area  { 
+    font-size: 15px; 
+    height: 100%; 
+    cursor: text;
+} 
+
+.enviar-class button  { 
+    font-size: 14px; 
+    border-radius: 3px; 
+    padding: 2px 10px; 
+    background-image: linear-gradient(rgb(224, 240, 248), rgb(176, 224, 248)); 
+    border: thin solid rgb(72, 120, 160); 
+    color: rgb(49, 21, 99); 
+    box-shadow: rgb(40, 208, 248) 0px 0px 2px inset;
+} 
+
+.enviar-class button:hover  { 
+    box-shadow: transparent 0px 0px 2px inset; 
+    cursor: pointer;
+}
