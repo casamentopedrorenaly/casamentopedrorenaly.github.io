@@ -22,16 +22,36 @@
     inset: 0px; 
     overflow: hidden; 
     z-index: 0;
-} 
+}
 
+.div-fotos {
+    height: 85vh; 
+    min-height: 450px; 
+    width: 95vw; 
+    display: flex; 
+    flex-direction: column; 
+    border: 1px solid gray; 
+    position: absolute; 
+    border-radius: 5px; 
+    margin: auto; 
+    inset: 0px; 
+    overflow: hidden; 
+    z-index: 0;
+	
+	-webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+	
 @media (min-width: 600px){ 
   .div-geral { 
     height: 80vh; 
     min-height: 450px; 
     width: 850px; 
     min-width: 580px;
-  } 
-}     
+  }
+}
 
 .div-geral #header-chat-top  { 
     height: 30px; 
